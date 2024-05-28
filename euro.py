@@ -4,8 +4,8 @@ import requests
 import argparse
 
 parser = argparse.ArgumentParser(description="Euro")
-parser.add_argument("--days", dest="days", type=int, help="Number of days", default=30)
-parser.add_argument("--height", dest="height", type=int, help="Height of the chart", default=10)
+parser.add_argument("--days", "-d", dest="days", type=int, help="Number of days", default=30)
+parser.add_argument("--height", "-he", dest="height", type=int, help="Height of the chart", default=10)
 args = parser.parse_args()
 
 url = f"https://economia.awesomeapi.com.br/json/daily/EUR/{args.days}"
