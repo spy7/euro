@@ -11,7 +11,7 @@ args = parser.parse_args()
 url = f"https://economia.awesomeapi.com.br/json/daily/EUR/{args.days}"
 
 euro = requests.get(url)
-ask = [Decimal(day["ask"]) for day in euro.json()[-1:0:-1]]
+ask = [Decimal(day["ask"]) for day in euro.json()[-1::-1]]
 
 print(acp.plot(ask, {"height": args.height}))
 print(f"Last: {ask[-2]:.2f} - Now: {ask[-1]:.2f}")
